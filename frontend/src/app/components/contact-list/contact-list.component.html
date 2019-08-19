@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>Мои контакты</span>
+</mat-toolbar>
+<table>
+  <thead>
+    <th>Имя</th>
+    <th>Телефон</th>
+    <th>Должность</th>
+    <th>Занимает с</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{contact.name}}</td>
+      <td><span style="cursor: pointer; text-decoration: underline" (click)="openContactCard(contact)">{{contact.phone}}</span></td>
+      <td>{{contact.position?.name}}</td>
+      <td>{{contact.position?.takeSince}}</td>
+    </tr>
+  </tbody>
+</table>
